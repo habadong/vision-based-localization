@@ -28,7 +28,7 @@ void changeSize(int w, int h) {
  
 float angle = 0.0f;
  
-void renderScene(void) {
+void renderScene(void) {   // renderSence 전체를 쉐이더로 바꿔???
  
     // Clear Color and Depth Buffers
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -36,16 +36,16 @@ void renderScene(void) {
     // Reset transformations
     glLoadIdentity();
     // Set the camera
-    gluLookAt(0.0f, 0.0f, 10.0f,
+    gluLookAt(0.0f, 0.0f, 10.0f,    
         0.0f, 0.0f, 0.0f,
-        0.0f, 1.0f, 0.0f);
+        0.0f, 1.0f, 0.0f); //버전 2개로 해봐도 됨 여기다가 받은 데이터를 넘겨서 적용해봐도 되고 쉐이터 적용해서 바꿔봐도되고
  
     glRotatef(angle, 0.0f, 1.0f, 0.0f);
  
     glBegin(GL_TRIANGLES);
     glVertex3f(-2.0f, -2.0f, 0.0f);
     glVertex3f(2.0f, 0.0f, 0.0);
-    glVertex3f(0.0f, 2.0f, 0.0);
+    glVertex3f(0.0f, 2.0f, 0.0); //좌표를 텍스트로 출력을 해야되는데 같이 3D로 돌아버림 -? 공간상에 글자를 opencv화면에 표시하는걸로
     glEnd();
  
     angle += 0.1f;
